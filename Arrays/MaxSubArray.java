@@ -33,13 +33,11 @@ public class MaxSubArray {
         for (int i = 0; i < n.length; i++) {
             curSum += n[i];
 
-            if (curSum > max) {
-                max = curSum;
-            }
-
             if (curSum < 0) {
                 curSum = 0;
             }
+
+            max = Math.max(max, curSum);
 
         }
         return max;

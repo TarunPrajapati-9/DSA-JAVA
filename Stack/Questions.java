@@ -169,6 +169,40 @@ public class Questions {
         return maxArea;
     }
 
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+    public static boolean isPalindrome(ListNode head) {
+        ListNode node = head;
+        Stack<Integer> s1 = new Stack<>();
+        while (node != null) {
+            s1.push(node.val);
+            node = node.next;
+        }
+
+        while (head != null) {
+            if (head.val != s1.pop()) {
+                return false;
+            }
+            head = head.next;
+        }
+        return true;
+    }
+
     public static void printStack(Stack<Integer> s) {
         while (!s.isEmpty()) {
             System.out.println(s.pop());
@@ -189,7 +223,17 @@ public class Questions {
         // for (int n : span) {
         // System.out.println(n);
         // }
-        int arr[] = { 2, 1, 5, 6, 2, 3 };
-        System.out.println(maxArea(arr));
+        // int arr[] = { 2, 1, 5, 6, 2, 3 };
+        // System.out.println(maxArea(arr));
+        ListNode third = new ListNode(3, null);
+        ListNode second = new ListNode(2, third);
+        ListNode head = new ListNode(1, second);
+
+        // while (head != null) {
+        // System.out.print(head.val + "->");
+        // head = head.next;
+        // }
+
+        System.out.println(isPalindrome(head));
     }
 }
