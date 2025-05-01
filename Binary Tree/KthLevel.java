@@ -1,6 +1,11 @@
 public class KthLevel {
     public static void main(String args[]) {
         int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, 6, -1, -1, 7 };
+        // 1
+        // / \
+        // 2 3
+        // / \ / \
+        // 4 5 6 7
         BinaryTree b1 = new BinaryTree();
         Node root = b1.buildTree(nodes);
 
